@@ -53,11 +53,8 @@ ul {
     color: black;
     background-color: white;
     text-decoration: underline;
-	
-
-
 .editor-stage .snow {
-    height:60px;
+    height:50px;
     background: #fff;
   }
   .snow{
@@ -96,4 +93,3 @@ ul {
     50% {background-position: 500px 500px, 100px 200px, -100px 150px;}
     100% {background-position: 500px 1000px, 200px 400px, -100px 300px;}
   }
-
