@@ -53,14 +53,11 @@ ul {
     color: black;
     background-color: white;
     text-decoration: underline;
-  }
-}
-<div class="snow">
-</div>	
+	
 
-CSS:
+
 .editor-stage .snow {
-    height:50px;
+    height:60px;
     background: #fff;
   }
   .snow{
