@@ -1,13 +1,23 @@
+<div>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a class="active" href="check.html">Troubleshooters</a></li>
+    <li><a class="active" href="home.html">Recipes</a></li>    
+  </ul>
+</div>
+<link rel="stylesheet" href="style.css">
+3 of 3
+
 <SCRIPT>
 function passWord() {
 var testV = 1;
-var pass1 = prompt('Please Enter Your Pin this PIN is a one that you have to ask me for. ONLY MY MUM CAN OPEN THIS',' ');
+var pass1 = prompt('Please Enter Your Pin/ it is the same one for the other passwords',' ');
 while (testV < 3) {
 if (!pass1)
 history.go(-1);
-if (pass1.toLowerCase() == "9201") {
+if (pass1.toLowerCase() == "1920") {
 alert('Welcome to the contact page! please alow popups');
-open('99.html');
+open('contact.html');
 break;
 }
 testV+=1;
@@ -24,3 +34,4 @@ return " ";
 <input type="button" value="Login to enter CLICK HERE" onClick="passWord()">
 </FORM>
 </CENTER>
+
