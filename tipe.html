@@ -1,0 +1,22 @@
+<h1>Click here to talk!!!</h1>
+
+<button onclick="typeWriter()">Click me</button>
+
+<p id="demo"></p>
+
+<script>
+var i = 0;
+var txt = 'Plese wait loading......................................................................100% Let us talk. Thank you for being good, it is allways nice having somone to talk to...... I am a cool automatic tipewriter sorry can not spell tipe writer. I will talk you through the website. I a warning you this website is protected from bots hackers and all of that narsty stuf so do not go snooping around or I will ban you from the site got it?....................... Right on the home page you can find lots of fun, savings, maps, free wi-fi and more. Every week to month I will put new updates up depending if Daniel is bothed to change my code right not, anyway back to what I was saying on the recipe page you can find lots of ideas to have for dinner or lunch.........................................................................................................................................................................................................................................................................................................................................The amount of people that acherly read this is mad. Remeber on the storage provider lucky dip one is a jack pot of 105GB Bye for this week. ';
+var speed = 78;
+
+function typeWriter() {
+  if (i < txt.length) {
+    document.getElementById("demo").innerHTML += txt.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  }
+}
+</script>
+
+</body>
+</html>
