@@ -3,3 +3,56 @@ There was unkown error thats all we know!
 <a href="home.html">GET ME OUT OF HERE I DONT'T CARE</a><br>
 <progress>max="100"</progress>
 Sending Data about the problem this will not be fixed.
+<!DOCTYPE html>
+<html>
+<style>
+#myProgress {
+  width: 100%;
+  background-color: #ddd;
+}
+
+#myBar {
+  width: 10%;
+  height: 30px;
+  background-color: #4CAF50;
+  text-align: center;
+  line-height: 30px;
+  color: white;
+}
+</style>
+<body>
+
+<h1>Help to remove the page</h1>
+
+<div id="myProgress">
+  <div id="myBar">0%</div>
+</div>
+
+<br>
+<button onclick="move()">Send info about this fult</button> 
+
+<script>
+var i = 0;
+function move() {
+  if (i == 0) {
+    i = 1;
+    var elem = document.getElementById("myBar");
+    var width = 10;
+    var id = setInterval(frame, 10);
+    function frame() {
+      if (width >= 100) {
+        clearInterval(id);
+        i = 0;
+      } else {
+        width++;
+        elem.style.width = width + "%";
+        elem.innerHTML = width  + "%";
+      }
+    }
+  }
+}
+</script>
+
+</body>
+</html>
+
