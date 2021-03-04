@@ -1,4 +1,26 @@
- <div>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        Digital clock
+    </title>
+    <link href="StyleSheet5.css" rel="stylesheet" />
+</head>
+<body>
+ <style>
+        h1 {
+            font-size: 30px;
+            text-align: center;
+        }
+
+        #clock {
+            display: block;
+            margin: 0 auto;
+            background: red;
+            border: 5px solid black;
+        }
+    </style>
+    <div>
         <h1 style="color:blue"><i>Digital Clock using canvas HTML5</i></h1>
         <canvas id="clock" width="500" height="200"></canvas>
     </div>
@@ -41,3 +63,5 @@
 
     setInterval(getClock, 1000);
     </script>
+</body>
+</html>
