@@ -1,103 +1,43 @@
-<!DOCTYPE html>
-<link rel=w"stylesheet" href="style.css">
-<!-- Created By CodingNepal -->
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <!-- Somehow I got an error, so I comment the title, just uncomment to show -->
-    <!-- <title>Digital Clock Javascript | CodingNepal</title> -->
-  </head>
-  <body>
-    <div class="clock">
-      <div class="display">
-</div>
-</div>
-<script>
-      setInterval(function(){
-        const clock = document.querySelector(".display");
-        let time = new Date();
-        let sec = time.getSeconds();
-        let min = time.getMinutes();
-        let hr = time.getHours();
-        let day = 'AM';
-        if(hr > 12){
-          day = 'PM';
-          hr = hr - 12;
-        }
-        if(hr == 0){
-          hr = 12;
-        }
-        if(sec < 10){
-          sec = '0' + sec;
-        }
-        if(min < 10){
-          min = '0' + min;
-        }
-        if(hr < 10){
-          hr = '0' + hr;
-        }
-        clock.textContent = hr + ':' + min + ':' + sec + " " + day;
-      });
+ <div>
+        <h1 style="color:blue"><i>Digital Clock using canvas HTML5</i></h1>
+        <canvas id="clock" width="500" height="200"></canvas>
+    </div>
+    <script>
+    var context;
+    var d;
+    var str;
+    function getClock()
+    {
+    
+    d = new Date();
+    str = Calculate(d.getHours(), d.getMinutes(), d.getSeconds());
+    
+    context = clock.getContext("2d");
+    context.clearRect(0, 20, 500, 200);
+    context.font = "40pt calibri";
+    context.fillStyle = "white";
+    context.fillText(str, 102, 125);
+    }
+
+    function Calculate(hour, min, sec)
+    {
+    var curTime;
+    if(hour < 10)
+    curTime = "0"+hour.toString();
+    else
+    curTime = hour.toString();
+
+    if(min < 10)
+    curTime += ":0"+min.toString();
+    else
+    curTime += ":"+min.toString();
+
+    if(sec < 10)
+    curTime += ":0"+sec.toString();
+    else
+    curTime += ":"+sec.toString();
+    return curTime;
+    }
+
+    setInterval(getClock, 1000);
     </script>
-
-  </body>
-</html>
-
-<!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-.loader {
-  border: 16px solid #f3f3f3;
-  border-radius: 50%;
-  border-top: 16px solid blue;
-  border-right: 16px solid black;
-  border-bottom: 16px solid black;
-  border-left: 16px solid black;
-  width: 120px;
-  height: 120px;
-  -webkit-animation: spin 2s linear infinite;
-  animation: spin 2s linear infinite;
-}
-
-@-webkit-keyframes spin {
-  0% { -webkit-transform: rotate(0deg); }
-  100% { -webkit-transform: rotate(360deg); }
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-</style>
-</head>
-<body>
-
-<h2>Geting time from server...</h2>
-
-<div class="loader"></div>
-
-</body>
-</html>
-<!DOCTYPE html>
-<html>
-<body>
-
-<h1>Getting server updates</h1>
-<div id="result"></div>
-
-<script>
-if(typeof(EventSource) !== "undefined") {
-  var source = new EventSource("demo_sse.php");
-  source.onmessage = function(event) {
-    document.getElementById("result").innerHTML += event.data + "<br>";
-  };
-} else {
-  document.getElementById("result").innerHTML = "Sorry, your browser does not support server-sent events...";
-}
-</script>
-
-</body>
-</html>
-
