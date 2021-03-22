@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: danielr.netlify.app
+Token: 20b548a3cb6682e6a16afd1825729bf43e9c9a625227e077f32cb58790248d29
