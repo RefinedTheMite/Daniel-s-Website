@@ -1,10 +1,4 @@
 <!DOCTYPE html>
-<? 
-Session_start(); 
-$today = time(); 
-$query="INSERT into logged_in (Today, SessionID, CurrentPage, BrowserType, IP) VALUES ('".$today."','".$_SESSION['sesid']."','".$_SERVER['PHP_SELF']."','".$_SERVER['HTTP_USER_AGENT']."','".$_SERVER['REMOTE_ADDR']."')"; 
-$result = mysql_query($query); 
-?>
 <html>
 <div>
   <ul>
@@ -14,6 +8,7 @@ $result = mysql_query($query);
   </ul>
 </div>
   <head>
+    <title> Danielr Home Page </title>
 <link rel=w"stylesheet" href="style.css">
     <!-- CloudFilt.com -->
 <script async src="https://srv12335.cloudfilt.com/analyz.js?render=EKBdHi8u07Pt8EBSRZrC"></script>
@@ -100,7 +95,7 @@ This weeks flyer
    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
   <strong>New Update</strong> The website has upgraded but some features are still beta cool new things.</div>
    <div class="alert"> 
-  <strong>You're all safe here!!</strong>You are on a safe, protected and secure connection consider onot using free unlimited VPN it can be dangerous.
+  <strong>You're all safe here!!</strong> You are on a safe, protected and secure connection consider not using free unlimited VPN it can be dangerous or you will get blocked for tor.
    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
 </div>
 </div>
