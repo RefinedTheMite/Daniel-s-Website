@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <?php /* CloudFilt.com */
 function getUserIP43_CF() {
     $ipaddress = "";
@@ -30,6 +29,7 @@ $context_CF23  = stream_context_create($options_CF23);
 $server67_CF = file_get_contents($url_CF23, false, $context_CF23);
 if ($server67_CF != "OK" and !empty($server67_CF)) { header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");header("Cache-Control: post-check=0, pre-check=0", false);header("Pragma: no-cache"); header("Location: https://cloudfilt.com/stop-$ipCF43_CF-EKBdHi8u07Pt8EBSRZrC" , true, 307);echo "<SCRIPT LANGUAGE='JavaScript'>document.location.href='https://cloudfilt.com/stop-".$ipCF43_CF."-EKBdHi8u07Pt8EBSRZrC'</SCRIPT>";die;}
 ?>
+<!DOCTYPE html>
 <html>
 <div>
   <ul>
