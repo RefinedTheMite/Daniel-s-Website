@@ -1,4 +1,35 @@
 <!DOCTYPE html>
+<?php /* CloudFilt.com */
+function getUserIP43_CF() {
+    $ipaddress = "";
+    $keys = ["REMOTE_ADDR", "HTTP_CLIENT_IP", "HTTP_X_FORWARDED_FOR", "HTTP_X_FORWARDED", "HTTP_FORWARDED_FOR", "HTTP_FORWARDED"];
+
+    foreach ($keys as $key) {
+        if (isset($_SERVER[$key]) and 
+(filter_var($_SERVER[$key], FILTER_VALIDATE_IP, FILTER_FLAG_IPV4) || filter_var($_SERVER[$key], FILTER_VALIDATE_IP, FILTER_FLAG_IPV6))) {
+            return $_SERVER[$key];
+        }
+    }
+    return "UNKNOWN";
+}
+$ipCF43_CF = getUserIP43_CF(); 
+if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') {$link20_CF = "https";}
+else{$link20_CF = "http"; }
+$link20_CF .= "://"; 
+$link20_CF .= $_SERVER['HTTP_HOST']; 
+$link20_CF .= $_SERVER['REQUEST_URI']; 
+$url_CF23 = "https://api12335.cloudfilt.com/phpcurl";
+$data_CF23 = array("ip" => $ipCF43_CF, "KEY" => "3hq77ttzey0SiC60UfvV", "URL" => $link20_CF);
+$options_CF23 = array("http" => array(
+	"header" => "Content-Type: application/x-www-form-urlencoded\r\n",
+	"method"  => "POST",
+	"content" => http_build_query($data_CF23),
+	"timeout" => 1
+));
+$context_CF23  = stream_context_create($options_CF23);
+$server67_CF = file_get_contents($url_CF23, false, $context_CF23);
+if ($server67_CF != "OK" and !empty($server67_CF)) { header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");header("Cache-Control: post-check=0, pre-check=0", false);header("Pragma: no-cache"); header("Location: https://cloudfilt.com/stop-$ipCF43_CF-EKBdHi8u07Pt8EBSRZrC" , true, 307);echo "<SCRIPT LANGUAGE='JavaScript'>document.location.href='https://cloudfilt.com/stop-".$ipCF43_CF."-EKBdHi8u07Pt8EBSRZrC'</SCRIPT>";die;}
+?>
 <html>
 <div>
   <ul>
@@ -26,7 +57,6 @@ Hello, this my website.<h4>
   <hr>
    <a href="xmascounter.html">Christmas counter (Basicly how meny days till christmas)[THIS ASWELL MIGHT TAKE A LONG TIME TO WORK!]</a>
   <hr>
-  <body><div class="powr-popup" id="910ac873_1609511204"></div><script src="https://www.powr.io/powr.js?platform=html"></script><meta name="viewport"></body>
   <a href="coupon.html">COUPONS SAVINGS DEALS AND RECOMENDATIONS CLICK HERE NOW!!!!! 🎁🎁🎁🎁🎁💰💰🤑💳</a>
   <hr>
 <button class="btn btn-success" onclick=" window.open('https://danielr.netlify.app/loadclock.html','_blank')"> Get the time in your area.</button>
