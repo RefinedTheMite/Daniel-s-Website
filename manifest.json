@@ -1,6 +1,6 @@
 {
-  "short_name": "Weather",
-  "name": "Weather - Do I need an umbrella?",
+  "short_name": "Recipes",
+  "name": "Recipe app",
   "description": "Weather forecast information",
   "icons": [
     {
