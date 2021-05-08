@@ -1,10 +1,10 @@
 {
   "short_name": "Recipes",
   "name": "Recipe app",
-  "description": "Weather forecast information",
+  "description": "Get Danielr as a desktop app!",
   "icons": [
     {
-      "src": "https://via.placeholder.com/48",
+      "src": "https://icons.iconarchive.com/icons/hopstarter/book/256/Recipe-Book-icon.png",
       "sizes": "48x48",
       "type": "image/png"
     },
