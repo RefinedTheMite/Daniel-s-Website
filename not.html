@@ -1,3 +1,4 @@
+<script>
 if (!("Notification" in window)) {
     alert("Desktop notifications is not supported by this browser. Try another.");
     return;
@@ -13,3 +14,4 @@ else if (Notification.permission !== 'denied') {
     });
 }
 var notification = new Notification(title,options)
+</script>
