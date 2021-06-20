@@ -116,5 +116,18 @@ This weeks flyer
    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
 </div>
 </div>
+  <hr>
+  This site is protected by hCaptcha and its
+<a href="https://hcaptcha.com/privacy">Privacy Policy</a> and
+<a href="https://hcaptcha.com/terms">Terms of Service</a> apply.
+  <hr>
+  <button class="h-captcha" data-sitekey="6a9a6814-4576-4b40-acb2-dd6eff809de9" data-callback="onSubmit">
+  Submit
+    <script type="text/javascript">
+  function onSubmit(token) {
+    document.getElementById('my-form').submit();
+  }
+</script>
+</button>
 </body>
 </html>
