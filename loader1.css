@@ -1,1 +1,67 @@
-html {box-sizing: border-box;}*, *: : after, *: : before {box-sizing: inherit;}*, *: before, *: after {box-sizing: border-box;outline: none;}html {font-family: "Source Sans Pro", sans-serif;font-size: 16px;font-smooth: auto;font-weight: 300;line-height: 1.5;color: #444;}body {position: relative;display: flex;align-items: center;justify-content: center;width: 100%;height: 100vh;}.loader {position: relative;display: grid;grid-template-columns: 33% 33% 33%;grid-gap: 2px;width: 100px;height: 100px;}.loader > div {position: relative;width: 100%;height: 100%;background: #FF6347;transform: scale(0);transform-origin: center center;animation: loader 2s infinite linear;}.loader > div: nth-of-type(1), .loader > div: nth-of-type(5), .loader > div: nth-of-type(9) {animation-delay: 0.4s;}.loader > div: nth-of-type(4), .loader > div: nth-of-type(8) {animation-delay: 0.2s;}.loader > div: nth-of-type(2), .loader > div: nth-of-type(6) {animation-delay: 0.6s;}.loader > div: nth-of-type(3) {animation-delay: 0.8s;}@keyframes loader {0% {transform: scale(0);}40% {transform: scale(1);}80% {transform: scale(1);}100% {transform: scale(0);}}
+$transition-duration: 2s;
+$path-length: 157px; // Retrieved using SVG's getTotalLength()
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+svg {
+  overflow: visible;
+  width: 100px;
+  height: 150px;
+  
+  g {
+    animation: slide $transition-duration linear infinite;
+    
+    &:nth-child(2) {
+      animation-delay: $transition-duration / 4;
+      
+      path {
+        animation-delay: $transition-duration / 4;
+        stroke-dasharray: 0px $path-length + 1;
+        stroke-dashoffset: 1px;
+      }
+    }
+  }
+  
+  path{
+    stroke: url(#gradient);
+    stroke-width: 20px;
+    stroke-linecap: round;
+    fill: none;
+    stroke-dasharray: 0 $path-length;
+    stroke-dashoffset: 0;
+    animation: escalade $transition-duration cubic-bezier(0.8, 0, 0.2, 1) infinite;
+  }
+}
+
+@keyframes slide {
+  0% {
+    transform: translateY(-50px);
+  }
+  100% {
+    transform: translateY(50px);
+  }
+}
+
+@keyframes escalade {
+  0% {
+    stroke-dasharray: 0 $path-length;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: $path-length - 1 $path-length;
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dasharray: $path-length - 1 $path-length;
+    stroke-dashoffset: -($path-length - 1);
+  }
+}
