@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html>
 <div>
   <ul>
     <li>
@@ -14,3 +16,26 @@
 <title>Danielr Agreement</title>
 <center><h1> Please read the agreement below then press continue</h1></center>
 <link rel="stylesheet;" href="style.css"
+<body>
+
+<h1>Typewriter</h1>
+
+<button onclick="typeWriter()">Read Agreement</button>
+
+<p id="demo"></p>
+
+<script>
+var i = 0;
+var txt = 'When you delete you device infomation you visit and you data will be sent to the cloud where we will  process then find and delete the resr of your data. Note: if you revisit the site you data will be restored. Q: Why do we keep your basic data? A: Your basic data is used to verfy that you are are a human and not a threat to the site. Please consider staying with us it will be sad to see you go. If you wish to keep your data on this site but want to see it email me at strausdaniel41@gmail.com.
+var speed = 50;
+
+function typeWriter() {
+  if (i < txt.length) {
+    document.getElementById("demo").innerHTML += txt.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  }
+}
+</script>
+
+</body>
