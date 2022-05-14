@@ -13,7 +13,25 @@
   </ul>
 </div>
   </script>
-<audio src="inspiring nice.mp3" autoplay loop></audio>
+<!-- (A) AUDIO TAG -->
+<audio src="1.mp3" id="bgm" autoplay></audio>
+ 
+<script>
+// (B) GET AUDIO TAG + DEFINE PLAYLIST
+let audio = document.getElementById("bgm"),
+    playlist = ["inspiring nice.mp3", "music2.m4a"],
+    current = 0;
+ 
+// (C) AUTO LOAD NEXT SONG
+audio.onended = () => {
+  current++;
+  if (current >= playlist.length) { current = 0; }
+  audio.src = playlist[current];
+  audio.pause();
+  audio.load();
+  audio.play();
+};
+</script>
 <script src="/script.js" defer></script>  
 <link rel="stylesheet" href="style.css">
 <title> CRYPTO Donate 🪙</title>
