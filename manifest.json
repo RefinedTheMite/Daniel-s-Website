@@ -1,41 +1,31 @@
-{
-  "name": "Recipes by Daniel",
-  "short_name": "Recipes",
-  "start_url": "index.html",
-  "scope": "./",
-  "icons": [
-    {
-      "src": "contract.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "contract.png",
-      "sizes": "512x512",
-      "type": "image/png"
-    }
-  ],
-  "theme_color": "#ffd31d",
-  "background_color": "#333",
-  "display": "standalone"
-}{
-  "name": "Stick-it Notes by Tharun",
-  "short_name": "Stick-it",
-  "start_url": "index.html",
-  "scope": "./",
-  "icons": [
-    {
-      "src": "contract.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "contract.png",
-      "sizes": "512x512",
-      "type": "image/png"
-    }
-  ],
-  "theme_color": "#ffd31d",
-  "background_color": "#333",
-  "display": "standalone"
-}
+{short_name: "Recipes", name: "",…}
+display
+: 
+"standalone"
+icons
+: 
+[{src: "/neeva-pwa-icon-512.png", type: "image/png", sizes: "512x512"}]
+0
+: 
+{src: "/neeva-pwa-icon-512.png", type: "image/png", sizes: "512x512"}
+sizes
+: 
+"512x512"
+src
+: 
+"/neeva-pwa-icon-512.png"
+type
+: 
+"image/png"
+name
+: 
+"Neeva Search"
+scope
+: 
+"/"
+short_name
+: 
+"Neeva"
+start_url
+: 
+"/?src=pwa"
