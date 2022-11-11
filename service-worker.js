@@ -1,25 +1,35 @@
-if('serviceWorker' in navigator) {
-  let registration;
 
-  const registerServiceWorker = async () => {
-    registration = await          navigator.serviceWorker.register('./service-worker.js');
-  };
+// give your cache a name
+const cacheName = 'web-store';
 
-  registerServiceWorker();
-}
-const cacheName = 'my-cache';
-const filestoCache = [
+// put the static assets and routes you want to cache here
+const filesToCache = [
   '/',
-  '/favicon.ico',
+  '/ico/favicon.ico',
   '/index.html',
   '/home.html',
   '/css/styles.css',
   '/js/app.js',
   '/img/logo.png'
-]; 
+];
+
+// the event handler for the activate event
+self.addEventListener('activate', e => self.clients.claim());
+
+// the event handler for the install event 
+// typically used to cache assets
 self.addEventListener('install', e => {
   e.waitUntil(
     caches.open(cacheName)
     .then(cache => cache.addAll(filesToCache))
   );
+});
+
+// the fetch event handler, to intercept requests and serve all 
+// static assets from the cache
+self.addEventListener('fetch', e => {
+  e.respondWith(
+    caches.match(e.request)
+    .then(response => response ? response : fetch(e.request))
+  )
 });
