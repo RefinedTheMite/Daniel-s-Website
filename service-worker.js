@@ -1,4 +1,3 @@
-
 // give your cache a name
 const cacheName = 'web-store';
 
