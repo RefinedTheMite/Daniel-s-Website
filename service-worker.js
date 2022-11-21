@@ -1,43 +1,52 @@
-if('serviceWorker' in navigator) {
-  let registration;
+const CACHE_NAME = 'offline';
+const OFFLINE_URL = 'offline.html';
 
-  const registerServiceWorker = async () => {
-    registration = await          navigator.serviceWorker.register('./service-worker.js');
-  };
-
-  registerServiceWorker();
-}
-// give your cache a name
-const cacheName = 'web-store';
-
-// put the static assets and routes you want to cache here
-const filesToCache = [
-  '/',
-  '/ico/favicon.ico',
-  '/index.html',
-  '/home.html',
-  '/css/styles.css',
-  '/js/app.js',
-  '/img/logo.png'
-];
-
-// the event handler for the activate event
-self.addEventListener('activate', e => self.clients.claim());
-
-// the event handler for the install event 
-// typically used to cache assets
-self.addEventListener('install', e => {
-  e.waitUntil(
-    caches.open(cacheName)
-    .then(cache => cache.addAll(filesToCache))
-  );
+self.addEventListener('install', function(event) {
+  console.log('[ServiceWorker] Install');
+  
+  event.waitUntil((async () => {
+    const cache = await caches.open(CACHE_NAME);
+    // Setting {cache: 'reload'} in the new request will ensure that the response
+    // isn't fulfilled from the HTTP cache; i.e., it will be from the network.
+    await cache.add(new Request(OFFLINE_URL, {cache: 'reload'}));
+  })());
+  
+  self.skipWaiting();
 });
 
-// the fetch event handler, to intercept requests and serve all 
-// static assets from the cache
-self.addEventListener('fetch', e => {
-  e.respondWith(
-    caches.match(e.request)
-    .then(response => response ? response : fetch(e.request))
-  )
+self.addEventListener('activate', (event) => {
+  console.log('[ServiceWorker] Activate');
+  event.waitUntil((async () => {
+    // Enable navigation preload if it's supported.
+    // See https://developers.google.com/web/updates/2017/02/navigation-preload
+    if ('navigationPreload' in self.registration) {
+      await self.registration.navigationPreload.enable();
+    }
+  })());
+
+  // Tell the active service worker to take control of the page immediately.
+  self.clients.claim();
+});
+
+self.addEventListener('fetch', function(event) {
+  // console.log('[Service Worker] Fetch', event.request.url);
+  if (event.request.mode === 'navigate') {
+    event.respondWith((async () => {
+      try {
+        const preloadResponse = await event.preloadResponse;
+        if (preloadResponse) {
+          return preloadResponse;
+        }
+
+        const networkResponse = await fetch(event.request);
+        return networkResponse;
+      } catch (error) {
+        console.log('[Service Worker] Fetch failed; returning offline page instead.', error);
+
+        const cache = await caches.open(CACHE_NAME);
+        const cachedResponse = await cache.match(OFFLINE_URL);
+        return cachedResponse;
+      }
+    })());
+  }
 });
