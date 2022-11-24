@@ -1,4 +1,5 @@
 {
+  "$schema": "https://danielr.netlify.app/manifest.json",
   "name": "Danielr Recipes",
   "short_name": "Recipes",
   "start_url": "index.html",
