@@ -1,11 +1,11 @@
 {
   "$schema": "https://json.schemastore.org/web-manifest-combined.json",
-  "name": "HackerWeb",
-  "short_name": "HackerWeb",
+  "name": "Danielr Recipes",
+  "short_name": "Recipes",
   "start_url": ".",
   "display": "standalone",
   "background_color": "#fff",
-  "description": "A readable Hacker News app.",
+  "description": "A yummy set of recipes in a clean new app.",
   "icons": [{
     "src": "images/touch/homescreen48.png",
     "sizes": "48x48",
