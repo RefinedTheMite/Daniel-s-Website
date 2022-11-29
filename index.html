@@ -1,34 +1,4 @@
 <!DOCTYPE html!>
-<?php /* CloudFilt.com */
-function getUserIP43_CF() {
-    $keys = ["REMOTE_ADDR", "HTTP_CLIENT_IP", "HTTP_X_FORWARDED_FOR", "HTTP_X_FORWARDED", "HTTP_FORWARDED_FOR", "HTTP_FORWARDED"];
-
-    foreach ($keys as $key) {
-        if (isset($_SERVER[$key]) and 
-(filter_var($_SERVER[$key], FILTER_VALIDATE_IP, FILTER_FLAG_IPV4) || filter_var($_SERVER[$key], FILTER_VALIDATE_IP, FILTER_FLAG_IPV6))) {
-            return $_SERVER[$key];
-        }
-    }
-    return "UNKNOWN";
-}
-$ipCF43_CF = getUserIP43_CF(); 
-if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') {$link20_CF = "https";}
-else{$link20_CF = "http"; }
-$link20_CF .= "://"; 
-$link20_CF .= $_SERVER['HTTP_HOST']; 
-$link20_CF .= $_SERVER['REQUEST_URI']; 
-$url_CF23 = "https://api12335.cloudfilt.com/phpcurl";
-$data_CF23 = array("ip" => $ipCF43_CF, "KEY" => "3hq77ttzey0SiC60UfvV", "URL" => $link20_CF);
-$options_CF23 = array("http" => array(
-	"header" => "Content-Type: application/x-www-form-urlencoded\r\n",
-	"method"  => "POST",
-	"content" => http_build_query($data_CF23),
-	"timeout" => 1
-));
-$context_CF23  = stream_context_create($options_CF23);
-$server67_CF = file_get_contents($url_CF23, false, $context_CF23);
-if ($server67_CF != "OK" and !empty($server67_CF)) { header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");header("Cache-Control: post-check=0, pre-check=0", false);header("Pragma: no-cache"); header("Location: https://cloudfilt.com/stop-$ipCF43_CF-EKBdHi8u07Pt8EBSRZrC" , true, 307);echo "<SCRIPT LANGUAGE='JavaScript'>document.location.href='https://cloudfilt.com/stop-".$ipCF43_CF."-EKBdHi8u07Pt8EBSRZrC'</SCRIPT>";die;}
-?>
 <div>
   <ul>
     <li>
@@ -63,9 +33,9 @@ if ($server67_CF != "OK" and !empty($server67_CF)) { header("Cache-Control: no-s
   <script src="/script.js" defer></script>
   <link rel="manifest" href="manifest.json">
   
-<meta name= “viewport” content=”width=device-width, user-scalable=no” /><!-- CloudFilt.com -->
-
-  <script async src="https://srv12335.cloudfilt.com/analyz.js?render=EKBdHi8u07Pt8EBSRZrC"></script>
+<meta name= “viewport” content=”width=device-width, user-scalable=no” />
+<!-- CloudFilt.com -->
+<script async src="https://srv12335.cloudfilt.com/analyz.js?render=EKBdHi8u07Pt8EBSRZrC"></script>
 </head>
 <div class="’cookie-banner’" style="’display:">
   <p>By using my website, you agree to my cookie policy</p>
