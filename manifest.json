@@ -7,34 +7,9 @@
       "src": "https://icons.iconarchive.com/icons/hopstarter/book/256/Recipe-Book-icon.png",
       "sizes": "256x256",
       "type": "image/png"
-    },
-    {
-      "src": "https://icons.iconarchive.com/icons/hopstarter/book/256/Recipe-Book-icon.png",
-      "sizes": "256x256",
-      "type": "image/png"
-    },
-    {
-      "src": "https://icons.iconarchive.com/icons/hopstarter/book/256/Recipe-Book-icon.png",
-      "sizes": "256x256",
-      "type": "image/png"
-    },
-    {
-      "src": "https://icons.iconarchive.com/icons/hopstarter/book/256/Recipe-Book-icon.png",
-      "sizes": "256x256",
-      "type": "image/png"
-    },
-    {
-      "src": "https://icons.iconarchive.com/icons/hopstarter/book/256/Recipe-Book-icon.png",
-      "sizes": "256x256",
-      "type": "image/png"
-    },
-    {
-      "src": "https://icons.iconarchive.com/icons/hopstarter/book/256/Recipe-Book-icon.png",
-      "sizes": "256x256",
-      "type": "image/png"
     }
   ],
-  "start_url": "/",
+  "start_url": "https://daniel-s-website.pages.dev/home",
   "background_color": "#3367D6",
   "display": "standalone",
   "scope": "/",
