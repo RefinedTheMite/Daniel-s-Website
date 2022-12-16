@@ -1,18 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
 <html>
-  <div>
-  <ul>
-    <li>
-      <a href="index.html">Home</a>
-    </li>
-    <li>
-      <a class="active" href="check.html">Troubleshooters</a>
-    </li>
-    <li>
-      <a class="active" href="home.html">Recipes</a>
-    </li>
-  </ul>
-</div>
-  </script>
+<head>
+              <meta name="description" content="A fun website made by me Daniel to experiment with html, come have a look!">
+       <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#Ff66cc"/>
+
+       <!-- Chatra {literal} -->
+<header><script>
+    (function(d, w, c) {
+        w.ChatraID = 'hiGuzdXCehkvN7xnf';
+        var s = d.createElement('script');
+        w[c] = w[c] || function() {
+            (w[c].q = w[c].q || []).push(arguments);
+        };
+        s.async = true;
+        s.src = 'https://call.chatra.io/chatra.js';
+        if (d.head) d.head.appendChild(s);
+    })(document, window, 'Chatra');
+       </script></header>
+<!-- /Chatra {/literal} -->
+  <title>Recipes</title>
+  <script>if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/service-worker.js')
+      .then(registration => {
+        console.log('Service worker registered:', registration);
+      })
+      .catch(error => {
+        console.log('Service worker registration failed:', error);
+      });
+  });
+}
+</script>
+  <style>
+  body {
+  background-color: Snow;
+    }
+  #myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: red;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+  }
+
+  #myBtn:hover {
+  background-color: #555;
+  }
+  </style>
+</head>
+<body>
+       <link rel="manifest" href="manifest.json">
+  <noscript><h1 id="ie-message">Our website needs to access JavaScript to use the offline page and use personal features, please turn it on!</h1></noscript>
+  <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 <!-- (A) AUDIO TAG -->
 <audio src="inspiring nice.mp3" id="bgm" autoplay></audio>
  
