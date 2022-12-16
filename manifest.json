@@ -1,17 +1,42 @@
 {
-  "name": "My Recipes",
   "short_name": "Recipes",
-  "description": "A collection of my favorite recipes",
+  "name": "Recipe app",
+  "description": "Get Danielr as a desktop app!",
   "icons": [
     {
-      "src": "icon.png",
-      "sizes": "48x48"
+      "src": "https://icons.iconarchive.com/icons/hopstarter/book/256/Recipe-Book-icon.png",
+      "sizes": "256x256",
+      "type": "image/png"
     },
     {
-      "src": "icon_large.png",
-      "sizes": "96x96"
+      "src": "https://icons.iconarchive.com/icons/hopstarter/book/256/Recipe-Book-icon.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "https://icons.iconarchive.com/icons/hopstarter/book/256/Recipe-Book-icon.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "https://icons.iconarchive.com/icons/hopstarter/book/256/Recipe-Book-icon.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "https://icons.iconarchive.com/icons/hopstarter/book/256/Recipe-Book-icon.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "https://icons.iconarchive.com/icons/hopstarter/book/256/Recipe-Book-icon.png",
+      "sizes": "256x256",
+      "type": "image/png"
     }
   ],
-  "start_url": "home.html",
-  "display": "standalone"
+  "start_url": "/",
+  "background_color": "#3367D6",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#3367D6"
 }
